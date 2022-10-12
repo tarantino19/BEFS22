@@ -93,7 +93,7 @@ app.post('/api/persons', (request, response) => {
   }
 
   persons = persons.concat(person) // this adds all the person into the original PERSONS array
-  response.json(person)
+  response.json(person) // the response
 })
 
 

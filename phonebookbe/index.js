@@ -7,7 +7,7 @@ app.use(express.json())
 
 morgan.token("data", (request) => {
   return request.method ? JSON.stringify(request.body) : " "; ;
-});
+}); //this is the most basic one to show logger
 
 app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms :data")

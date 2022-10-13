@@ -37,9 +37,9 @@ let persons = [
   }
 ]
 
-app.get('/', (request, response) => {
-  response.send('<h1>Hello Persons</h1>')
-})
+// app.get('/', (request, response) => {
+//   response.send('<h1>Hello Persons</h1>')
+// })
 
 app.get('/api/persons', (request, response) => {
   response.json(persons)
@@ -56,6 +56,7 @@ app.get('/info', (request, response) => {
 app.get('/api/persons/:id', (request, response) => {
   const id = Number(request.params.id)
   const person = persons.find(p => p.id === id)
+  // new person id has to be equal to the request.param.id
 
   if (person) {
     response.json(person)
@@ -68,6 +69,7 @@ app.get('/api/persons/:id', (request, response) => {
 app.delete('/api/persons/:id', (request, response) => {
   const id = Number(request.params.id)
   persons = persons.filter(person => person.id !== id)
+  // for delete, persons being filtered has to be not equal to the id 
   response.status(204).end()
 })
 
@@ -103,8 +105,8 @@ app.post('/api/persons', (request, response) => {
     })
   }
 
-  persons = persons.concat(person)
-  response.json(person)
+  persons = persons.concat(person) // adding the new one to the persons without mutating array
+  response.json(person) //adding that newpersons as response
 })
 
 
@@ -121,6 +123,7 @@ app.use(unknownEndpoint)
 // app.use(unknownEndpoint)
 
 const PORT = 3001
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })

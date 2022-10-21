@@ -11,10 +11,13 @@ const url = `mongodb+srv://tolentinored19:${password}@phonebook.az1a1bi.mongodb.
 
 mongoose.connect(url)
 
-    const personSchema = new mongoose.Schema({
-      name: String,
-      number: String,
-    })
+
+
+const personSchema = new mongoose.Schema({
+  name: String,
+  number: String,
+});
+
 
 const Person = mongoose.model('Person', personSchema)
 

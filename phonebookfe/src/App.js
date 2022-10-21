@@ -55,10 +55,16 @@ const App = () => {
       }
     }
 
+
+    
     personService.create(newPerson).then(savedPerson => {
       setPersons(persons.concat(savedPerson))
       notify(`Added ${savedPerson.name}`)
     })
+    .catch(error => {
+      console.log(error.response.data.error)
+    })
+
   }
 
   const deletePerson = (id) => { 

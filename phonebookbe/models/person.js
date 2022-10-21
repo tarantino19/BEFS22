@@ -36,11 +36,13 @@ mongoose
   const personSchema = new mongoose.Schema({
     name: {
       type: String,
-      minlength: 3
+      minlength: 3,
+      required: true,
     },
     number: {
       type: String,
-      validate: numberValidators
+      validate: numberValidators,
+      required: true,
     },
   });
 

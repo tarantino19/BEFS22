@@ -1,4 +1,4 @@
-# Phonebook---Mini-Full-Stack-Project
+# Phonebook---Backend Project
 https://phonebook-fso2223.fly.dev/
 
 This is a mini project from University of Helsinki's Full-Stack Open Course.

@@ -8,3 +8,5 @@ Testing was also done via Postman for the backend API. Validation was also done 
 to make sure input doesn't accept certain values (e.g. specific number of numbers in the phonenumber section, not accepting strings)
 
 Deployment was done via FLY.io.
+
+Note: CSS currently in the works so style is very minimal at the moment.
